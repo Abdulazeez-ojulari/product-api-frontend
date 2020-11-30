@@ -67,7 +67,7 @@ export default class AddProduct extends Component {
       image: this.state.image,
       price: this.state.price
     };
-
+    if(!this.state.errorMsg){
     ProductDataService.create(data)
       .then(response => {
         this.setState({
@@ -81,9 +81,9 @@ export default class AddProduct extends Component {
         console.log(response.data);
       })
       .catch(e => {
-        console.log(e);
+        this.setState({errorMsg: "Register please"});
       });
-  }
+  }}
 
   newProduct() {
     this.setState({

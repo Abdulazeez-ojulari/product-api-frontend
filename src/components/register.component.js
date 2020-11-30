@@ -65,7 +65,7 @@ export default class Register extends Component {
       email: this.state.email,
       password: this.state.password
     };
-
+    if(!this.state.errorMsg){
     UserDataService.register(data)
       .then(response => {
         this.setState({
@@ -83,7 +83,7 @@ export default class Register extends Component {
       .catch(e => {
         console.log(e);
       });
-  }
+  }}
 
 
   render() {

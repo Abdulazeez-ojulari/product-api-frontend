@@ -80,6 +80,7 @@ export default class Product extends Component {
   }
 
   getProduct(id) {
+    if(!this.state.errorMsg){
     ProductDataService.get(id)
       .then(response => {
         this.setState({
@@ -90,7 +91,7 @@ export default class Product extends Component {
       .catch(e => {
         console.log(e);
       });
-  }
+  }}
 
   // updateImage(status) {
   //   var data = {
