@@ -15,8 +15,6 @@ export default class AddProduct extends Component {
       name: "",
       image: "", 
       price: "",
-      successMsg: "",
-      errorMsg: "",
 
       submitted: false
     };
@@ -26,38 +24,19 @@ export default class AddProduct extends Component {
     this.setState({
       name: e.target.value
     });
-    if (!this.state.name) {
-      this.setState({errorMsg: "Please enter your name"});
-    }
-    if (this.state.name.length < 5) {
-      this.setState({errorMsg: "Minimum length is 5"});
-    }if (!this.state.name) {
-      this.setState({errorMsg: "Please enter your name"});
-    }
-    if (this.state.name.length < 5) {
-      this.setState({errorMsg: "Minimum length is 5"});
-    }
+    
   }
 
   onChangeImage(e) {
     this.setState({
       image: e.target.value
     });
-    if (!this.state.image) {
-      this.setState({errorMsg: "Please enter your image"});
-    }
-    if (this.state.image.length < 10) {
-      this.setState({errorMsg: "Minimum length is 10"});
-    }
   }
 
   onChangePrice(e) {
     this.setState({
       price: e.target.value
     });
-    if (!this.state.price) {
-      this.setState({errorMsg: "Please enter your Price"});
-    }
   }
 
   saveProduct(e) {
@@ -67,7 +46,6 @@ export default class AddProduct extends Component {
       image: this.state.image,
       price: this.state.price
     };
-    if(!this.state.errorMsg){
     ProductDataService.create(data)
       .then(response => {
         this.setState({
@@ -83,7 +61,7 @@ export default class AddProduct extends Component {
       .catch(e => {
         this.setState({errorMsg: "Register please"});
       });
-  }}
+  }
 
   newProduct() {
     this.setState({

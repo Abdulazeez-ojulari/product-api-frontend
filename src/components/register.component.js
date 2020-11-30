@@ -13,8 +13,6 @@ export default class Register extends Component {
     this.state = {
       email: "",
       password: "", 
-      successMsg: "",
-      errorMsg: ""
     };
   }
 
@@ -22,40 +20,18 @@ export default class Register extends Component {
     this.setState({
       name: e.target.value
     });
-    if (!this.state.name) {
-      this.setState({errorMsg: "Please enter your Name"});
-    }
   }
 
   onChangeEmail(e) {
     this.setState({
       email: e.target.value
     });
-
-    if (!this.state.email) {
-      this.setState({errorMsg: "Please enter your email-ID"});
-    }
-
-    if (typeof this.state.email !== "undefined") {
-      //regular expression for email validation
-      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      if (!pattern.test(this.state.email)) {
-        this.setState({errorMsg: "Please enter valid email-ID."});
-      }
-    }
   }
 
   onChangePassword(e) {
     this.setState({
       password: e.target.value
     });
-
-    if (!this.state.password) {
-      this.setState({errorMsg: "Please enter your Password"});
-    }
-    if (this.state.password.length < 5) {
-      this.setState({errorMsg: "Minimum length is 5"});
-    }
   }
 
   register(e) {
@@ -65,7 +41,6 @@ export default class Register extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    if(!this.state.errorMsg){
     UserDataService.register(data)
       .then(response => {
         this.setState({
@@ -83,7 +58,7 @@ export default class Register extends Component {
       .catch(e => {
         console.log(e);
       });
-  }}
+  }
 
 
   render() {
