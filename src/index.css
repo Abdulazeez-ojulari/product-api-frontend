@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; 
+    } 
+  }
+
+body {
+  font-family: cursive;
+  color: #000065;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: cursive;
+  font-weight: 400; }
+
+.heading-1 {
+  font-size: 3rem;
+  color: #000065;
+  line-height: 1; 
+}
+
+.heading-2 {
+  font-size: 2rem;
+  line-height: 1; 
+}
+  .heading-2--light {
+    color: #000065; 
+  }
+  .heading-2--dark {
+    color: #000065; 
+  }
+
+.heading-3 {
+  font-size: 1.6rem;
+  color: #000065;
+  text-transform: uppercase; 
+}
+
+.heading-4 {
+  font-size: 1.9rem; 
+}
+  .heading-4--light {
+    color: #000065; 
+  }
+  .heading-4--dark {
+    color: #000065; 
+  }
+  
+  a{
+    text-decoration: none;
+  }
