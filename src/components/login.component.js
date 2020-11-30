@@ -53,14 +53,6 @@ export default class Login extends Component {
   render() {
     return (
       <div className="form-container">
-          {this.state.errorMsg.length > 0 && <div className='danger'>
-            <br />
-            <p>{this.state.errorMsg}</p>
-          </div> }
-          {this.state.successMsg.length > 0 && <div  className='success'>
-            <br />
-            <p>{this.state.successMsg}</p>
-          </div> }
           <form className="form">
                         
               <div className="formrow">

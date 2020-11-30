@@ -78,14 +78,6 @@ export default class AddProduct extends Component {
     return (
       <div className="form-container">
         <h4 className="heading-1">Add Product</h4>
-        {this.state.errorMsg.length > 0 && <div className='danger'>
-            <br />
-            <p>{this.state.errorMsg}</p>
-          </div> }
-          {this.state.successMsg.length > 0 && <div  className='success'>
-            <br />
-            <p>{this.state.successMsg}</p>
-          </div> }
         {this.state.submitted ? (
           <div>
             <h4>New Product Added!</h4>
