@@ -10,7 +10,7 @@ class ProductDataService {
   }
 
   create(data) {
-    return http.post("/products", data);
+    return http.post("/products", data,{headers:{'xauthtoken':localStorage.getItem('token')}});
   }
 
   update(id, data) {
