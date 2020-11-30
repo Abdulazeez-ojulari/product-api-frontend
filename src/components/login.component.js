@@ -18,7 +18,6 @@ export default class Login extends Component {
     this.setState({
       email: e.target.value
     });
-    }
   }
 
   onChangePassword(e) {
