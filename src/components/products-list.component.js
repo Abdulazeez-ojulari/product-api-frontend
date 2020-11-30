@@ -124,10 +124,9 @@ export default class ProductsList extends Component {
           <div className="product-group">
             {products &&
               products.map((product, index) => (
-                <Link
-                to={"/product/" + product.id} className="link">
+                <Link to={"/product/" + product.id} className="link" key={index}>
               
-                <div className={"product-group-item " } key={index}>
+                <div className={"product-group-item " }>
                   <img src={product.image} alt="loading..." className="product-img"></img> 
                   <p className='product-name'>{this.capitalizeFirstLetter(product.name)}</p>
                   <p className='product-price'>#{product.price}</p>
