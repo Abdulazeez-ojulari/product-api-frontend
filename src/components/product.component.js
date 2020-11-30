@@ -37,6 +37,12 @@ export default class Product extends Component {
         image: image
       }
     }));
+    if (!this.state.image) {
+      this.setState({errorMsg: "Please enter your image"});
+    }
+    if (this.state.image.length < 10) {
+      this.setState({errorMsg: "Minimum length is 10"});
+    }
   }
 
   onChangeName(e) {
@@ -50,6 +56,13 @@ export default class Product extends Component {
         }
       };
     });
+
+    if (!this.state.name) {
+      this.setState({errorMsg: "Please enter your name"});
+    }
+    if (this.state.name.length < 5) {
+      this.setState({errorMsg: "Minimum length is 5"});
+    }
   }
 
   onChangePrice(e) {
@@ -61,6 +74,9 @@ export default class Product extends Component {
         price: price
       }
     }));
+    if (!this.state.price) {
+      this.setState({errorMsg: "Please enter your Price"});
+    }
   }
 
   getProduct(id) {
