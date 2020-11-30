@@ -360,11 +360,11 @@ img{
 
 .link{
   text-decoration: none;
-  color: #e0e00b;
+  color: #000065;
 }
 
 .link:hover{
-  color: #000065;
+  color: #e0e00b;
 }
 
 
